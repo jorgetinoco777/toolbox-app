@@ -4,12 +4,18 @@ import "./App.css";
 import Body from "../../molecules/Body/Body";
 
 export const App = () => {
-  const { data } = useAppState();
+  const { data, searchValue, handleChangeSearchValue, handleClickSearchValue } =
+    useAppState();
 
   return (
     <div className="App">
       <Header />
-      <Body data={ data } />
+      <Body
+        searchValue={searchValue}
+        data={data}
+        handleChangeSearchValue={handleChangeSearchValue}
+        handleClickSearchValue={handleClickSearchValue}
+      />
     </div>
   );
 };

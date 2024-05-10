@@ -14,4 +14,10 @@ const buildDataUtil = (list) => {
   return result;
 };
 
-export { buildDataUtil };
+const getUrlService = ( fileName ) => {
+  const urlService = "http://192.168.1.20:3000/files/data";
+  if (fileName) return `${urlService}?fileName=${fileName}`;
+  return urlService;
+};
+
+export { getUrlService, buildDataUtil };
