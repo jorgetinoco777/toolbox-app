@@ -1,6 +1,10 @@
 import "./App.css";
+import { useAppState } from "./state/useAppState";
 
-function App() {
+export const App = () => {
+  const { data } = useAppState();
+  console.log("Data: ", data);
+
   return (
     <div className="App">
       <nav class="navbar navbar-bg navbar-expand-lg bg-body-tertiary">
@@ -34,25 +38,22 @@ function App() {
             <table class="table table-striped">
               <thead>
                 <tr>
-                  <th scope="col">File Name</th>
-                  <th scope="col">Text</th>
-                  <th scope="col">Number</th>
-                  <th scope="col">Hex</th>
+                  <th scope="col" align="left">File Name</th>
+                  <th scope="col" align="left">Text</th>
+                  <th scope="col" align="left">Number</th>
+                  <th scope="col" align="left">Hex</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>file1.csv</td>
-                  <td>tst</td>
-                  <td>12345</td>
-                  <td>234as45672asdf123asdfdf</td>
-                </tr>
-                <tr>
-                  <td>file1.csv</td>
-                  <td>tst</td>
-                  <td>12345</td>
-                  <td>234as45672asdf123asdfdf</td>
-                </tr>
+                {data &&
+                  data.map((item) => (
+                    <tr>
+                      <td align="left">{ item.name }</td>
+                      <td align="left">{ item.text }</td>
+                      <td align="left">{ item.number}</td>
+                      <td align="left">{ item.hex }</td>
+                    </tr>
+                  ))}
               </tbody>
             </table>
           </div>
@@ -60,6 +61,6 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
 export default App;
