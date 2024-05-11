@@ -12,6 +12,7 @@ export const useAppState = () => {
   const [searchValue, setSearchValue] = useState("");
 
   const handleChangeSearchValue = (value) => {
+    console.log("Change: ", value);
     if (value.length === 0) dispatch(getAllFiles());
 
     setSearchValue(value);

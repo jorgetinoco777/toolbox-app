@@ -15,7 +15,7 @@ const buildDataUtil = (list) => {
 };
 
 const getUrlService = ( fileName ) => {
-  const urlService = "http://192.168.1.20:3000/files/data";
+  const urlService = "http://localhost:3000/files/data";
   if (fileName) return `${urlService}?fileName=${fileName}`;
   return urlService;
 };

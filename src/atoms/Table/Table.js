@@ -1,8 +1,8 @@
 import React from "react";
 
-const Table = ({data}) => {
+const Table = ({ data }) => {
   return (
-    <table class="table table-striped">
+    <table aria-label="files-table" className="table table-striped">
       <thead>
         <tr>
           <th scope="col" align="left">
@@ -20,7 +20,7 @@ const Table = ({data}) => {
         </tr>
       </thead>
       <tbody>
-        {data &&
+        {data.length > 0 ? (
           data.map((item) => (
             <tr>
               <td align="left">{item.name}</td>
@@ -28,7 +28,14 @@ const Table = ({data}) => {
               <td align="left">{item.number}</td>
               <td align="left">{item.hex}</td>
             </tr>
-          ))}
+          ))
+        ) : (
+          <tr>
+            <td role="column" colSpan={4} align="left">
+              No existen datos.
+            </td>
+          </tr>
+        )}
       </tbody>
     </table>
   );

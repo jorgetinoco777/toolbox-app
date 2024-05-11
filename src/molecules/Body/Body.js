@@ -9,11 +9,11 @@ const Body = ({
   handleClickSearchValue,
 }) => {
   return (
-    <div class="container text-center">
-      <div class="row mt-4">
-        <div class="col"></div>
-        <div class="col"></div>
-        <div class="col">
+    <div className="container text-center">
+      <div className="row mt-4">
+        <div className="col"></div>
+        <div className="col"></div>
+        <div className="col">
           <Options
             searchValue={searchValue}
             handleChangeSearchValue={handleChangeSearchValue}
@@ -21,8 +21,8 @@ const Body = ({
           />
         </div>
       </div>
-      <div class="row">
-        <div class="col">
+      <div className="row">
+        <div className="col">
           <Table data={data} />
         </div>
       </div>

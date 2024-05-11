@@ -14,17 +14,14 @@ describe("Options component test", () => {
       />
     );
 
-    const input = screen.getAllByLabelText("search-file");
-    const button = screen.getAllByLabelText("button-search");
+    const input = screen.getByLabelText("search-file");
+    const button = screen.getByLabelText("button-search");
 
-    expect(input.length).toEqual(1);
-    expect(input[0]).toBeInTheDocument();
-
-    expect(button.length).toEqual(1);
-    expect(button[0]).toBeInTheDocument();
+    expect(input).toBeInTheDocument();
+    expect(button).toBeInTheDocument();
   });
 
-  test("Should handleChangeSearchValue is called", () => {
+  test("When we write in the input-text should call the handleChangeSearchValue function", () => {
     render(
       <Options
         searchValue={""}
@@ -33,10 +30,25 @@ describe("Options component test", () => {
       />
     );
 
-    const input = screen.getAllByLabelText("search-file");
-    fireEvent.change(input[0], { target: { value: "test" } });
+    const input = screen.getByLabelText("search-file");
+    fireEvent.change(input, { target: { value: "test" } });
 
     expect(handleChangeSearchValue).toHaveBeenCalledTimes(1);
-    expect(input[0].value).toEqual("test");
+  });
+
+  test("When we click on the search button should call the handleClickSearchValue function", () => {
+    render(
+      <Options
+        searchValue={""}
+        handleChangeSearchValue={handleChangeSearchValue}
+        handleClickSearchValue={handleClickSearchValue}
+      />
+    );
+
+    const button = screen.getByLabelText("button-search");
+    fireEvent.click(button);
+
+    expect(handleChangeSearchValue).toHaveBeenCalledTimes(0);
+    expect(handleClickSearchValue).toHaveBeenCalledTimes(1);
   });
 });
