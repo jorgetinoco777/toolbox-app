@@ -5,6 +5,7 @@ jest.mock("./state/useAppState", () => ({
   useAppState: () => ({
     data: [],
     searchValue: "",
+    isLoading: false,
     handleChangeSearchValue: jest.fn(),
     handleClickSearchValue: jest.fn(),
   }),

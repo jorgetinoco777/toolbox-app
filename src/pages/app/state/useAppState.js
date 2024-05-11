@@ -7,7 +7,7 @@ import { getAllFiles } from "../../../stores/thunks/app";
 
 export const useAppState = () => {
   const dispatch = useAppDispatch();
-  const { data } = useAppSelector((state) => state.app);
+  const { data, isLoading } = useAppSelector((state) => state.app);
 
   const [searchValue, setSearchValue] = useState("");
 
@@ -29,6 +29,7 @@ export const useAppState = () => {
   return {
     data,
     searchValue,
+    isLoading,
     handleChangeSearchValue,
     handleClickSearchValue,
   };

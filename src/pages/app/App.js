@@ -1,10 +1,11 @@
 import Header from "../../atoms/Header/Header";
 import { useAppState } from "./state/useAppState";
-import "./App.css";
 import Body from "../../molecules/Body/Body";
+import Loading from "../../atoms/Loading/Loading";
+import "./App.css";
 
 export const App = () => {
-  const { data, searchValue, handleChangeSearchValue, handleClickSearchValue } =
+  const { data, isLoading, searchValue, handleChangeSearchValue, handleClickSearchValue } =
     useAppState();
 
   return (
@@ -16,6 +17,7 @@ export const App = () => {
         handleChangeSearchValue={handleChangeSearchValue}
         handleClickSearchValue={handleClickSearchValue}
       />
+      <Loading isLoading={isLoading} />
     </div>
   );
 };

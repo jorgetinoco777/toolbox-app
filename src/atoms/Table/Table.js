@@ -5,16 +5,16 @@ const Table = ({ data }) => {
     <table aria-label="files-table" className="table table-striped">
       <thead>
         <tr>
-          <th scope="col" align="left">
+          <th align="left">
             File Name
           </th>
-          <th scope="col" align="left">
+          <th align="left">
             Text
           </th>
-          <th scope="col" align="left">
+          <th align="left">
             Number
           </th>
-          <th scope="col" align="left">
+          <th align="left">
             Hex
           </th>
         </tr>
@@ -22,11 +22,11 @@ const Table = ({ data }) => {
       <tbody>
         {data.length > 0 ? (
           data.map((item) => (
-            <tr>
-              <td align="left">{item.name}</td>
-              <td align="left">{item.text}</td>
-              <td align="left">{item.number}</td>
-              <td align="left">{item.hex}</td>
+            <tr key={item.hex}>
+              <td scope="col" align="left">{item.name}</td>
+              <td scope="col" align="left">{item.text}</td>
+              <td scope="col" align="left">{item.number}</td>
+              <td scope="col" align="left">{item.hex}</td>
             </tr>
           ))
         ) : (

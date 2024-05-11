@@ -4,6 +4,7 @@ import { buildDataUtil } from '../../utils';
 
 const initialState = {
     data: [],
+    isLoading: true,
 };
 
 export const appSlice = createSlice({
@@ -13,12 +14,16 @@ export const appSlice = createSlice({
     // Success
     builder.addCase(getAllFiles.fulfilled, (state, action) => {
       state.data = buildDataUtil(action.payload);
+      state.isLoading = false;
+    });
+    // Pending
+    builder.addCase(getAllFiles.pending, (state) => {
+      state.isLoading = true;
     });
     // Error
     builder.addCase(getAllFiles.rejected, (state) => {
-      state.data = [
-        {"file":"test2.csv","lines":[{"text":"ztfCQqQnNimERht","number":"39671103","hex":"af20abe957757ad92fc714cc13c53f4d"}]}
-      ];
+      state.data = [];
+      state.isLoading = false;
     });
   },
   reducers: {
