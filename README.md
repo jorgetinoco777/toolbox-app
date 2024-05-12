@@ -1,31 +1,109 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project name: toolbox-app
 
-## Available Scripts
+### Toolbox TV - Code Challenge
 
-In the project directory, you can run:
+**Important:** This project works correctly with version `16.3.0`
 
-### `npm start`
+***
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+##### DEV INFO
+**Name:** Jorge Tinoco
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**Email:** jorgeluis238@hotmail.com
 
-### `npm test`
+**Phone:** +593 9 6764 7864
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+#
+***
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+##### RUN PROJECT
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Go to the directory where you clone the project.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Install dependencies
 
+    <code style="font-size: 12px">`$ npm install`</code>
+
+2. Create the `.env` file with the following variables
+
+    >PORT=80
+
+    >API_TOOLBOX="http://localhost:3000"
+
+
+3. Run project: node-api-toolbox
+
+    <code style="font-size: 12px">`$ npm start`</code>
+
+4. Check the url and port it shows in the terminal.
+
+    ![alt text](</documentation/image-3.png>)
+
+5. Open a browser and write the url with the port that was assigned.
+
+    ![alt text](/documentation/image-1.png)
+
+
+
+***
+
+##### RUN UNIT TEST
+
+Go to the directory where you clone the project.
+
+1. Install dependencies
+
+    <code style="font-size: 12px">`$ npm install`</code>
+
+2. Create the .env file with the following variables
+
+    >PORT=80
+
+    >API_TOOLBOX="http://localhost:3000"
+
+3. Execute unit test
+
+    <code style="font-size: 12px">`$ npm test`</code>
+
+4. See the test results in the terminal
+
+    ![alt text](/documentation/image-2.png)
+
+#
+***
+
+#### RUN PROJECT - Docker
+
+Go to the directory where you clone the project.
+
+1. Install dependencies
+
+    <code style="font-size: 12px">$ npm install</code>
+
+2. Create the .env file with the following variables
+
+    >PORT=80
+
+    >API_TOOLBOX="http://localhost:3000"
+
+3. Create docker image
+
+    <code style="font-size: 12px">`$ docker build . -t react-app-toolbox:latest`</code>
+
+4. Run docker image 
+
+    <code style="font-size: 12px">`$ docker run --rm -d -p 80:80/tcp react-app-toolbox:latest`</code>
+
+5. Open the following url in the browser
+
+    <code>`http://localhost`</code>
+
+#
+***
+
+
+#### Important!
+
+<span style="font-size: 14px"><b>Message: </b>If you've made it this far, I hope everything worked well. Thank you, I had fun doing this challenge.</span>
